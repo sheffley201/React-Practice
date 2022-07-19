@@ -1,0 +1,15 @@
+.form-group {
+    margin-bottom: 1rem;
+}
+.form-group label {
+    font-weight: bold;
+    color: rgb(230, 230, 230);
+}
+.form-group input {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    font-size: 1.5rem;
+}
