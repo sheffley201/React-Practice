@@ -6,14 +6,14 @@ import Card from "../../UI/Card/Card";
 import Button from "../../UI/Button/Button";
 
 const AddUser = props => {
-    const nameInputRef = useRef();
-    const ageInputRef = useRef();
+	const nameInputRef = useRef();
+	const ageInputRef = useRef();
 
 	const addUserHandler = e => {
 		// when the add user button is clicked
 		e.preventDefault();
-        const enteredName = nameInputRef.current.value;
-        const enteredAge = ageInputRef.current.value;
+		const enteredName = nameInputRef.current.value;
+		const enteredAge = ageInputRef.current.value;
 
 		if (enteredName.trim() && +enteredAge > 0 && +enteredAge < 1000) {
 			// make sure both fields are filled
@@ -24,9 +24,9 @@ const AddUser = props => {
 				name: enteredName,
 				age: parseInt(enteredAge), // parseInt() is used to convert string to integer
 			});
-            // clear the input fields
-            nameInputRef.current.value = "";
-            ageInputRef.current.value = "";
+			// clear the input fields
+			nameInputRef.current.value = "";
+			ageInputRef.current.value = "";
 		} else {
 			// show alert if one or both of the fields are empty or out of range
 			if (!enteredName.trim() && !+enteredAge) {
@@ -53,19 +53,11 @@ const AddUser = props => {
 			<form onSubmit={addUserHandler}>
 				<div className={styles["form-group"]}>
 					<label htmlFor="username">Username</label>
-					<input
-						type="text"
-						name="username"
-                        ref={nameInputRef}
-					/>
+					<input type="text" name="username" ref={nameInputRef} />
 				</div>
 				<div className={styles["form-group"]}>
 					<label htmlFor="age">Age (Years)</label>
-					<input
-						type="number"
-						name="age"
-                        ref={ageInputRef}
-					/>
+					<input type="number" name="age" ref={ageInputRef} />
 				</div>
 				<Button type="submit">Add User</Button>
 			</form>
