@@ -1,8 +1,10 @@
-import styles from "./Input.module.css";
+import classes from "./Input.module.css";
 
 const Input = props => {
 	return (
-		<div className={props.className}>
+		<div className={`${classes.control} ${
+            props.isValid === false ? classes.invalid : ""
+        }`}>
 			<label htmlFor={props.id}>{props.label}</label>
 			<input
 				type={props.type}
