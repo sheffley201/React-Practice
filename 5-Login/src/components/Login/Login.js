@@ -83,9 +83,6 @@ const Login = props => {
 					onBlur={validateEmailHandler}
 				/>
 				<Input
-					className={`${classes.control} ${
-						passwordState.isValid === false ? classes.invalid : ""
-					}`}
                     type="password"
 					id="password"
 					label="Password"
