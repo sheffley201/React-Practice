@@ -3,12 +3,16 @@ import styles from "./MealItemForm.module.css";
 import Input from "../../UI/Input";
 
 const MealItemForm = props => {
+    const submitHandler = e => {
+        e.preventDefault();
+    }
+
 	return (
-		<form className={styles.form}>
+		<form onSubmit={submitHandler} className={styles.form}>
 			<Input
 				label="Amount"
 				input={{
-					id: "amount",
+					id: "amount_" + props.id,
 					type: "number",
 					min: "1",
 					max: "5",
