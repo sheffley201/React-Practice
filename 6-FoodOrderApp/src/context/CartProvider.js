@@ -38,7 +38,7 @@ const cartReducer = (state, action) => {
 		};
 	} else if (action.type === "REMOVE_ITEM") {
 		const existingCartItemIndex = state.cart.findIndex(
-			item => item.id === action.payload.id
+			item => item.id === action.payload
 		);
 
 		const existingItem = state.cart[existingCartItemIndex];
@@ -47,7 +47,7 @@ const cartReducer = (state, action) => {
 		let updatedCart;
 		if (existingItem.amount === 1) {
 			updatedCart = state.cart.filter(item => {
-				return item.id !== action.payload.id;
+				return item.id !== action.payload;
 			});
 		} else {
 			const updatedItem = {
